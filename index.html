@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Dearest 💕</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #ffd6e8, #ffb3d9);
+    overflow: hidden;
+  }
+
+  .page {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.96);
+    transition: all 0.7s ease;
+    pointer-events: none;
+  }
+
+  .page.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  .card {
+    background: white;
+    padding: 30px;
+    border-radius: 26px;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+  }
+
+  h1 {
+    color: #ff4f9a;
+    margin-bottom: 8px;
+    font-weight: normal;
+  }
+
+  p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  button {
+    margin-top: 22px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 999px;
+    background: #ff69b4;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .heart {
+    font-size: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    animation: bounce 1.8s infinite;
+  }
+
+  .secret {
+    display: none;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #ff4f9a;
+    font-style: italic;
+  }
+
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active">
+  <div class="card">
+    <h1>Hey you 💕</h1>
+    <p>
+      This page exists because<br>
+      someone cares about you a lot.
+    </p>
+    <div class="heart" onclick="reveal(this)">💗</div>
+    <div class="secret">Yes. That someone is me.</div>
+    <button onclick="next()">Next 👉</button>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="card">
+    <h1>Important Announcement 🍓</h1>
+    <p>
+      Please eat something good today.<br>
+      Even a little counts.<br><br>
+      This is not optional.<br>
+      Signed: Concerned Human.
+    </p>
+    <div class="heart" onclick="reveal(this)">🍰</div>
+    <div class="secret">
+      Your stomach deserves love too 😤
+    </div>
+    <button onclick="next()">Next 👉</button>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+  <div class="card">
+    <h1>Gentle Reminder 🧸</h1>
+    <p>
+      You don’t have to be okay.<br>
+      You don’t have to explain.<br>
+      You just have to exist.
+    </p>
+    <div class="heart" onclick="reveal(this)">🤍</div>
+    <div class="secret">
+      I’m right here. Always.
+    </div>
+    <button onclick="next()">Next 👉</button>
+  </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+  <div class="card">
+    <h1>About You 💖</h1>
+    <p>
+      You are my dearest one.<br>
+      My favorite human.<br>
+      The person I care about the most.
+    </p>
+    <div class="heart" onclick="reveal(this)">💞</div>
+    <div class="secret">
+      And no, this isn’t temporary.
+    </div>
+    <button onclick="next()">Next 👉</button>
+  </div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+  <div class="card">
+    <h1>Final Message 🌙</h1>
+    <p>
+      Eat well.<br>
+      Rest softly.<br>
+      And remember —
+    </p>
+    <div class="heart" onclick="reveal(this)">💓</div>
+    <div class="secret">
+      I LOVE YOU MY KUCHY MUCHU,MY RASMALAAI.MY KAJU KATLI.MY HOMEGIRL.I LOVE YOU THE MOST..
+    </div>
+  </div>
+</div>
+
+<script>
+  let i = 0;
+  const pages = document.querySelectorAll('.page');
+
+  function next() {
+    pages[i].classList.remove('active');
+    i++;
+    if (i < pages.length) {
+      pages[i].classList.add('active');
+    }
+  }
+
+  function reveal(el) {
+    el.nextElementSibling.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
